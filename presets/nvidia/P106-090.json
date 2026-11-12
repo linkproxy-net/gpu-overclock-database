@@ -1,0 +1,24 @@
+{
+  "gpu": "P106-090",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:27:17.931035Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.5,
+      "miners_count": 3,
+      "hiveos_linux": {
+        "mem_clock": 0,
+        "core_clock": 140,
+        "power_limit": 75
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+140",
+        "mem_offset": "+0",
+        "power_limit_percent": "38%"
+      },
+      "windows_miner_bat_args": "--cclock +140 --pl 75"
+    }
+  }
+}

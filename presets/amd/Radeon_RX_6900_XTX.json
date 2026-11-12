@@ -1,0 +1,23 @@
+{
+  "gpu": "Radeon RX 6900 XTX",
+  "brand": "amd",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:28:59.879224Z",
+  "presets": {
+    "ERG (Ergo)": {
+      "rating": 0.27778,
+      "miners_count": 5,
+      "hiveos_linux": {
+        "mem_clock": 1050,
+        "core_clock": 1900
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1900 (需按Ctrl+F锁频)",
+        "mem_offset": "+1050",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1900 --mclock +1050"
+    }
+  }
+}

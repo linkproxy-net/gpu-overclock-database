@@ -1,0 +1,56 @@
+{
+  "gpu": "GeForce RTX 3070 Ti LHR",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:27:09.044198Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.3125,
+      "miners_count": 5,
+      "hiveos_linux": {
+        "mem_clock": 2000,
+        "core_clock": 1200,
+        "power_limit": 230
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1200 (需按Ctrl+F锁频)",
+        "mem_offset": "+1000",
+        "power_limit_percent": "115%"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1200 --mclock +1000 --pl 230"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.25,
+      "miners_count": 4,
+      "hiveos_linux": {
+        "mem_clock": 2600,
+        "core_clock": 1540,
+        "power_limit": 160
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1540 (需按Ctrl+F锁频)",
+        "mem_offset": "+1300",
+        "power_limit_percent": "80%"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1540 --mclock +1300 --pl 160"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.3125,
+      "miners_count": 5,
+      "hiveos_linux": {
+        "mem_clock": 2000,
+        "core_clock": 1200,
+        "power_limit": 230
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1200 (需按Ctrl+F锁频)",
+        "mem_offset": "+1000",
+        "power_limit_percent": "115%"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1200 --mclock +1000 --pl 230"
+    }
+  }
+}

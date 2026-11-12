@@ -1,0 +1,32 @@
+name: Sync Overclock Database
+
+on:
+  schedule:
+    # 每天 UTC 0:00 和 12:00 (北京时间 08:00 和 20:00) 自动运行
+    - cron: '0 0,12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run Fetch Script
+        run: |
+          python fetch_hive_presets.py
+
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update hardware tuning data [skip ci]"
+          file_pattern: "presets/* all_active_coins.json README.md index.html"

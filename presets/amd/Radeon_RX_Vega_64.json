@@ -1,0 +1,67 @@
+{
+  "gpu": "Radeon RX Vega 64",
+  "brand": "amd",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:28:52.687691Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.23333,
+      "miners_count": 7,
+      "hiveos_linux": {
+        "mem_clock": 945,
+        "core_clock": 1220
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1220 (需按Ctrl+F锁频)",
+        "mem_offset": "+945",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1220 --mclock +945"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.16667,
+      "miners_count": 5,
+      "hiveos_linux": {
+        "mem_clock": 900,
+        "core_clock": 1300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1300 (需按Ctrl+F锁频)",
+        "mem_offset": "+900",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1300 --mclock +900"
+    },
+    "CFX (Conflux)": {
+      "rating": 0.03333,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 1225
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1225 (需按Ctrl+F锁频)",
+        "mem_offset": "+0",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1225"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.23333,
+      "miners_count": 7,
+      "hiveos_linux": {
+        "mem_clock": 945,
+        "core_clock": 1220
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1220 (需按Ctrl+F锁频)",
+        "mem_offset": "+945",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1220 --mclock +945"
+    }
+  }
+}

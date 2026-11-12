@@ -1,0 +1,38 @@
+{
+  "gpu": "P104-100",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:25:50.125144Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.03704,
+      "miners_count": 7,
+      "hiveos_linux": {
+        "mem_clock": -2000,
+        "core_clock": 205
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+205",
+        "mem_offset": "-1000",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--cclock +205 --mclock -1000"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.03704,
+      "miners_count": 7,
+      "hiveos_linux": {
+        "mem_clock": -2000,
+        "core_clock": 205
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+205",
+        "mem_offset": "-1000",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--cclock +205 --mclock -1000"
+    }
+  }
+}

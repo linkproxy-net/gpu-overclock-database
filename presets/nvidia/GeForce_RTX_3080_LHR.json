@@ -1,0 +1,54 @@
+{
+  "gpu": "GeForce RTX 3080 LHR",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:27:35.920423Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 1,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 2000,
+        "power_limit": 250
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+1000",
+        "power_limit_percent": "125%"
+      },
+      "windows_miner_bat_args": "--mclock +1000 --pl 250"
+    },
+    "CFX (Conflux)": {
+      "rating": 0.28571,
+      "miners_count": 4,
+      "hiveos_linux": {
+        "mem_clock": 2000,
+        "core_clock": 1110,
+        "power_limit": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1110 (需按Ctrl+F锁频)",
+        "mem_offset": "+1000",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1110 --mclock +1000"
+    },
+    "CLORE / NEOX": {
+      "rating": 1,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 2000,
+        "power_limit": 250
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+1000",
+        "power_limit_percent": "125%"
+      },
+      "windows_miner_bat_args": "--mclock +1000 --pl 250"
+    }
+  }
+}

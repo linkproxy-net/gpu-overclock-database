@@ -1,0 +1,68 @@
+{
+  "gpu": "Radeon RX 5600 XT",
+  "brand": "amd",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:28:37.335270Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.08333,
+      "miners_count": 12,
+      "hiveos_linux": {
+        "mem_clock": 900,
+        "core_clock": 1350
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1350 (需按Ctrl+F锁频)",
+        "mem_offset": "+900",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1350 --mclock +900"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.03472,
+      "miners_count": 5,
+      "hiveos_linux": {
+        "mem_clock": 900,
+        "core_clock": 1300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1300 (需按Ctrl+F锁频)",
+        "mem_offset": "+900",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1300 --mclock +900"
+    },
+    "DNX (Dynex)": {
+      "rating": 0.01389,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 890,
+        "core_clock": 1420
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1420 (需按Ctrl+F锁频)",
+        "mem_offset": "+890",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1420 --mclock +890"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.08333,
+      "miners_count": 12,
+      "hiveos_linux": {
+        "mem_clock": 900,
+        "core_clock": 1350
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1350 (需按Ctrl+F锁频)",
+        "mem_offset": "+900",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1350 --mclock +900"
+    }
+  }
+}

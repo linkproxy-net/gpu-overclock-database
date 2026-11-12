@@ -1,0 +1,86 @@
+{
+  "gpu": "GeForce RTX 2080 Ti",
+  "brand": "nvidia",
+  "tdp": 250,
+  "updated_at": "2026-11-12T07:26:25.095048Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.12346,
+      "miners_count": 10,
+      "hiveos_linux": {
+        "mem_clock": 0,
+        "core_clock": 250,
+        "power_limit": 270
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+250",
+        "mem_offset": "+0",
+        "power_limit_percent": "108%"
+      },
+      "windows_miner_bat_args": "--cclock +250 --pl 270"
+    },
+    "RVN (Ravencoin)": {
+      "rating": 0.09877,
+      "miners_count": 8,
+      "hiveos_linux": {
+        "mem_clock": 1500,
+        "core_clock": 150,
+        "power_limit": 180
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+150",
+        "mem_offset": "+750",
+        "power_limit_percent": "72%"
+      },
+      "windows_miner_bat_args": "--cclock +150 --mclock +750 --pl 180"
+    },
+    "DNX (Dynex)": {
+      "rating": 0.01235,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "power_limit": 125
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "50%"
+      },
+      "windows_miner_bat_args": "--pl 125"
+    },
+    "CFX (Conflux)": {
+      "rating": 1,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 200,
+        "core_clock": 100,
+        "power_limit": 300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+100",
+        "mem_offset": "+100",
+        "power_limit_percent": "120%"
+      },
+      "windows_miner_bat_args": "--cclock +100 --mclock +100 --pl 300"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.09877,
+      "miners_count": 8,
+      "hiveos_linux": {
+        "mem_clock": 1500,
+        "core_clock": 150,
+        "power_limit": 180
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+150",
+        "mem_offset": "+750",
+        "power_limit_percent": "72%"
+      },
+      "windows_miner_bat_args": "--cclock +150 --mclock +750 --pl 180"
+    }
+  }
+}

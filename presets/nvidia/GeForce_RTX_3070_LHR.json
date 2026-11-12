@@ -1,0 +1,39 @@
+{
+  "gpu": "GeForce RTX 3070 LHR",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:27:53.220700Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.125,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 2000,
+        "core_clock": 1455,
+        "power_limit": 120
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1455 (需按Ctrl+F锁频)",
+        "mem_offset": "+1000",
+        "power_limit_percent": "60%"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1455 --mclock +1000 --pl 120"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.375,
+      "miners_count": 3,
+      "hiveos_linux": {
+        "mem_clock": 2300,
+        "power_limit": 110
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+1150",
+        "power_limit_percent": "55%"
+      },
+      "windows_miner_bat_args": "--mclock +1150 --pl 110"
+    }
+  }
+}

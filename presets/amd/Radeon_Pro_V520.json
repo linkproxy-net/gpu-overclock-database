@@ -1,0 +1,38 @@
+{
+  "gpu": "Radeon Pro V520",
+  "brand": "amd",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:28:19.834777Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.04367,
+      "miners_count": 10,
+      "hiveos_linux": {
+        "mem_clock": 1200,
+        "core_clock": 1600
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1600 (需按Ctrl+F锁频)",
+        "mem_offset": "+1200",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1600 --mclock +1200"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.04367,
+      "miners_count": 10,
+      "hiveos_linux": {
+        "mem_clock": 1200,
+        "core_clock": 1600
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1600 (需按Ctrl+F锁频)",
+        "mem_offset": "+1200",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1600 --mclock +1200"
+    }
+  }
+}

@@ -1,0 +1,666 @@
+[
+  {
+    "key": "pearlhash",
+    "symbol": "PRL",
+    "name": "PRL (Oyster)",
+    "algo": "pearlhash",
+    "hot": "全网算力 28.22%",
+    "share": 0.2822
+  },
+  {
+    "key": "poseidon2",
+    "symbol": "QUAN",
+    "name": "QUAN (Quantis Network)",
+    "algo": "poseidon2",
+    "hot": "全网算力 8.22%",
+    "share": 0.0822
+  },
+  {
+    "key": "kawpow",
+    "symbol": "RVN",
+    "name": "RVN (Ravencoin)",
+    "algo": "kawpow",
+    "hot": "全网算力 0.75%",
+    "share": 0.0075
+  },
+  {
+    "key": "etchash",
+    "symbol": "ETC",
+    "name": "ETC (Ethereum Classic)",
+    "algo": "etchash",
+    "hot": "全网算力 0.36%",
+    "share": 0.0036
+  },
+  {
+    "key": "progpow-quai",
+    "symbol": "QUAI",
+    "name": "QUAI (QUAI)",
+    "algo": "progpow-quai",
+    "hot": "全网算力 0.14%",
+    "share": 0.0014
+  },
+  {
+    "key": "progpowz",
+    "symbol": "ZANO",
+    "name": "ZANO (Zano)",
+    "algo": "progpowz",
+    "hot": "全网算力 0.36%",
+    "share": 0.0036
+  },
+  {
+    "key": "xelis",
+    "symbol": "XEL",
+    "name": "XEL (Elastic)",
+    "algo": "xelis",
+    "hot": "全网算力 0.15%",
+    "share": 0.0015
+  },
+  {
+    "key": "autolykos2",
+    "symbol": "ERG",
+    "name": "ERG (Ergo)",
+    "algo": "autolykos2",
+    "hot": "全网算力 0.24%",
+    "share": 0.0024
+  },
+  {
+    "key": "octopus",
+    "symbol": "CFX",
+    "name": "CFX (CRYPTOFOREX)",
+    "algo": "octopus",
+    "hot": "全网算力 0.15%",
+    "share": 0.0015
+  },
+  {
+    "key": "heavyhash",
+    "symbol": "KAS",
+    "name": "KAS (KAS)",
+    "algo": "heavyhash",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0003
+  },
+  {
+    "key": "blake3",
+    "symbol": "ALPH",
+    "name": "ALPH (ALPH)",
+    "algo": "blake3",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "dynexsolve",
+    "symbol": "DNX",
+    "name": "DNX (DNX)",
+    "algo": "dynexsolve",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "quibic",
+    "symbol": "QUBIC",
+    "name": "QUBIC (QUBIC)",
+    "algo": "quibic",
+    "hot": "全网算力 0.77%",
+    "share": 0.0077
+  },
+  {
+    "key": "qhash",
+    "symbol": "QTC",
+    "name": "QTC (QTC)",
+    "algo": "qhash",
+    "hot": "全网算力 1.48%",
+    "share": 0.0148
+  },
+  {
+    "key": "randomscash",
+    "symbol": "SCASH",
+    "name": "SCASH (SCASH)",
+    "algo": "randomscash",
+    "hot": "全网算力 0.70%",
+    "share": 0.007
+  },
+  {
+    "key": "randomdrgx",
+    "symbol": "DRGX",
+    "name": "DRGX (DRGX)",
+    "algo": "randomdrgx",
+    "hot": "全网算力 0.62%",
+    "share": 0.0062
+  },
+  {
+    "key": "kawpow",
+    "symbol": "CLORE",
+    "name": "CLORE (Clore.ai)",
+    "algo": "kawpow",
+    "hot": "主流显卡币",
+    "share": 0.0005
+  },
+  {
+    "key": "zelhash",
+    "symbol": "FLUX",
+    "name": "FLUX (Flux)",
+    "algo": "zelhash",
+    "hot": "主流显卡币",
+    "share": 0.0005
+  },
+  {
+    "key": "mtp",
+    "symbol": "FIRO",
+    "name": "FIRO (Firo)",
+    "algo": "mtp",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0003
+  },
+  {
+    "key": "nexapow",
+    "symbol": "NEXA",
+    "name": "NEXA (NEXA)",
+    "algo": "nexapow",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0003
+  },
+  {
+    "key": "blake3-iron",
+    "symbol": "IRON",
+    "name": "IRON (IRON)",
+    "algo": "blake3-iron",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0007
+  },
+  {
+    "key": "sha512256d",
+    "symbol": "RXD",
+    "name": "RXD (Radiant)",
+    "algo": "sha512256d",
+    "hot": "主流显卡币",
+    "share": 0.0005
+  },
+  {
+    "key": "equihash 150/5/3",
+    "symbol": "BEAM",
+    "name": "BEAM (Beam)",
+    "algo": "equihash 150/5/3",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0004
+  },
+  {
+    "key": "kawpow",
+    "symbol": "NEOX",
+    "name": "NEOX (NEOX)",
+    "algo": "kawpow",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "abel",
+    "symbol": "ABEL",
+    "name": "ABEL (ABEL)",
+    "algo": "abel",
+    "hot": "全网算力 0.18%",
+    "share": 0.0018
+  },
+  {
+    "key": "verushash",
+    "symbol": "VRSC",
+    "name": "VRSC (VerusCoin)",
+    "algo": "verushash",
+    "hot": "全网算力 0.21%",
+    "share": 0.0021
+  },
+  {
+    "key": "kawpow",
+    "symbol": "NICEHASH-KAWPOW",
+    "name": "NICEHASH-KAWPOW (NICEHASH-KAWPOW)",
+    "algo": "kawpow",
+    "hot": "全网算力 0.19%",
+    "share": 0.0019
+  },
+  {
+    "key": "randomjuno",
+    "symbol": "JUNO",
+    "name": "JUNO (JUNO)",
+    "algo": "randomjuno",
+    "hot": "全网算力 0.16%",
+    "share": 0.0016
+  },
+  {
+    "key": "pearlhash",
+    "symbol": "UNMINEABLE-PEARLPOW",
+    "name": "UNMINEABLE-PEARLPOW (UNMINEABLE-PEARLPOW)",
+    "algo": "pearlhash",
+    "hot": "全网算力 0.12%",
+    "share": 0.0012
+  },
+  {
+    "key": "rentals",
+    "symbol": "CLORE-RENTALS",
+    "name": "CLORE-RENTALS (CLORE-RENTALS)",
+    "algo": "rentals",
+    "hot": "全网算力 0.10%",
+    "share": 0.001
+  },
+  {
+    "key": "equihash 192/7",
+    "symbol": "YEC",
+    "name": "YEC (Ycash)",
+    "algo": "equihash 192/7",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0009
+  },
+  {
+    "key": "progpow",
+    "symbol": "EPIC-PROGPOW",
+    "name": "EPIC-PROGPOW (EPIC-PROGPOW)",
+    "algo": "progpow",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0008
+  },
+  {
+    "key": "randomx2b",
+    "symbol": "CONN",
+    "name": "CONN (CONN)",
+    "algo": "randomx2b",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0008
+  },
+  {
+    "key": "cuckaroo 29",
+    "symbol": "XTM-CUCKAROO29",
+    "name": "XTM-CUCKAROO29 (XTM-CUCKAROO29)",
+    "algo": "cuckaroo 29",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0006
+  },
+  {
+    "key": "gr",
+    "symbol": "RTM",
+    "name": "RTM (RTM)",
+    "algo": "gr",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0006
+  },
+  {
+    "key": "sha3solidity",
+    "symbol": "ETI",
+    "name": "ETI (EtherInc)",
+    "algo": "sha3solidity",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0006
+  },
+  {
+    "key": "dsha256",
+    "symbol": "XDAG",
+    "name": "XDAG (XDAG)",
+    "algo": "dsha256",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0005
+  },
+  {
+    "key": "karlsenhash",
+    "symbol": "KLS",
+    "name": "KLS (KLS)",
+    "algo": "karlsenhash",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0005
+  },
+  {
+    "key": "keryxhash",
+    "symbol": "KRX",
+    "name": "KRX (KRX)",
+    "algo": "keryxhash",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0005
+  },
+  {
+    "key": "verthash",
+    "symbol": "VTC",
+    "name": "VTC (Vertcoin)",
+    "algo": "verthash",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0004
+  },
+  {
+    "key": "blake3_seq",
+    "symbol": "MDS",
+    "name": "MDS (MediShares)",
+    "algo": "blake3_seq",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0004
+  },
+  {
+    "key": "ethash",
+    "symbol": "ETHW",
+    "name": "ETHW (ETHW)",
+    "algo": "ethash",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0004
+  },
+  {
+    "key": "randomx-yada",
+    "symbol": "YDA",
+    "name": "YDA (YDA)",
+    "algo": "randomx-yada",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0003
+  },
+  {
+    "key": "cryptonight",
+    "symbol": "QWC",
+    "name": "QWC (Qwertycoin)",
+    "algo": "cryptonight",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0003
+  },
+  {
+    "key": "kawpow",
+    "symbol": "XNA",
+    "name": "XNA (XNA)",
+    "algo": "kawpow",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "equihash 192/7",
+    "symbol": "ZCL",
+    "name": "ZCL (ZClassic)",
+    "algo": "equihash 192/7",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "octopus",
+    "symbol": "NICEHASH-OCTOPUS",
+    "name": "NICEHASH-OCTOPUS (NICEHASH-OCTOPUS)",
+    "algo": "octopus",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "blake256r14",
+    "symbol": "DCR",
+    "name": "DCR (Decred)",
+    "algo": "blake256r14",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "proof-of-inference",
+    "symbol": "TSC",
+    "name": "TSC (Thunderstake)",
+    "algo": "proof-of-inference",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "vds",
+    "symbol": "VOLLAR",
+    "name": "VOLLAR (V-Dimension)",
+    "algo": "vds",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "cuckoo cycle",
+    "symbol": "AE",
+    "name": "AE (Aeternity)",
+    "algo": "cuckoo cycle",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "ethash",
+    "symbol": "NICEHASH-ETHASH",
+    "name": "NICEHASH-ETHASH (NICEHASH-ETHASH)",
+    "algo": "ethash",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "lyra2zz",
+    "symbol": "LAX",
+    "name": "LAX (LAX)",
+    "algo": "lyra2zz",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "ethash",
+    "symbol": "COMINING-ETHASH",
+    "name": "COMINING-ETHASH (COMINING-ETHASH)",
+    "algo": "ethash",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0002
+  },
+  {
+    "key": "minotaurx",
+    "symbol": "AVN",
+    "name": "AVN (AVN)",
+    "algo": "minotaurx",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "equihash",
+    "symbol": "ZEC",
+    "name": "ZEC (Zcash)",
+    "algo": "equihash",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "etchash",
+    "symbol": "NICEHASH-ETCHASH",
+    "name": "NICEHASH-ETCHASH (NICEHASH-ETCHASH)",
+    "algo": "etchash",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "neoscrypt",
+    "symbol": "PXC",
+    "name": "PXC (PXC)",
+    "algo": "neoscrypt",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "sha3d",
+    "symbol": "KCN",
+    "name": "KCN (KCN)",
+    "algo": "sha3d",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "beamhashv3",
+    "symbol": "NICEHASH-BEAMV3",
+    "name": "NICEHASH-BEAMV3 (NICEHASH-BEAMV3)",
+    "algo": "beamhashv3",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "autolykos2",
+    "symbol": "NICEHASH-AUTOLYKOS",
+    "name": "NICEHASH-AUTOLYKOS (NICEHASH-AUTOLYKOS)",
+    "algo": "autolykos2",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "cryptix",
+    "symbol": "CPAY",
+    "name": "CPAY (Cryptopay)",
+    "algo": "cryptix",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "tonpow",
+    "symbol": "TON",
+    "name": "TON (TON)",
+    "algo": "tonpow",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "cuckoo",
+    "symbol": "GRIN",
+    "name": "GRIN (Grin)",
+    "algo": "cuckoo",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "nexapow",
+    "symbol": "NICEHASH-NEXAPOW",
+    "name": "NICEHASH-NEXAPOW (NICEHASH-NEXAPOW)",
+    "algo": "nexapow",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "randomx-wow",
+    "symbol": "WOW",
+    "name": "WOW (WowSecret)",
+    "algo": "randomx-wow",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "poseidon2b",
+    "symbol": "NOID",
+    "name": "NOID (NOID)",
+    "algo": "poseidon2b",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "vela",
+    "symbol": "VELA",
+    "name": "VELA (VELA)",
+    "algo": "vela",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "progpow-telestai",
+    "symbol": "TLS",
+    "name": "TLS (TLS)",
+    "algo": "progpow-telestai",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "kawpow",
+    "symbol": "ABRS",
+    "name": "ABRS (ABRS)",
+    "algo": "kawpow",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "fishhash",
+    "symbol": "NICEHASH-FISHHASH",
+    "name": "NICEHASH-FISHHASH (NICEHASH-FISHHASH)",
+    "algo": "fishhash",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "randomx-arq",
+    "symbol": "PDC",
+    "name": "PDC (PDC)",
+    "algo": "randomx-arq",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "neoscrypt",
+    "symbol": "ZPOOL-NEOSCRYPT",
+    "name": "ZPOOL-NEOSCRYPT (ZPOOL-NEOSCRYPT)",
+    "algo": "neoscrypt",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "x16rv2",
+    "symbol": "PEXA",
+    "name": "PEXA (PEXA)",
+    "algo": "x16rv2",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0001
+  },
+  {
+    "key": "randomx",
+    "symbol": "XMR",
+    "name": "XMR (Monero)",
+    "algo": "randomx",
+    "hot": "全网算力 31.73%",
+    "share": 0.3173
+  },
+  {
+    "key": "randomx",
+    "symbol": "NICEHASH-RANDOMXMONERO",
+    "name": "NICEHASH-RANDOMXMONERO (NICEHASH-RANDOMXMONERO)",
+    "algo": "randomx",
+    "hot": "全网算力 3.08%",
+    "share": 0.0308
+  },
+  {
+    "key": "randomx",
+    "symbol": "ZEPH",
+    "name": "ZEPH (Zephyr)",
+    "algo": "randomx",
+    "hot": "全网算力 0.94%",
+    "share": 0.0094
+  },
+  {
+    "key": "randomx",
+    "symbol": "QRL",
+    "name": "QRL (Quantum Resistant Ledger)",
+    "algo": "randomx",
+    "hot": "全网算力 0.52%",
+    "share": 0.0052
+  },
+  {
+    "key": "randomx-epic",
+    "symbol": "EPIC",
+    "name": "EPIC (Epic Cash)",
+    "algo": "randomx-epic",
+    "hot": "全网算力 0.37%",
+    "share": 0.0037
+  },
+  {
+    "key": "randomx",
+    "symbol": "SAL",
+    "name": "SAL (SalPay)",
+    "algo": "randomx",
+    "hot": "全网算力 0.25%",
+    "share": 0.0025
+  },
+  {
+    "key": "randomx",
+    "symbol": "XTM-RANDOMX",
+    "name": "XTM-RANDOMX (XTM-RANDOMX)",
+    "algo": "randomx",
+    "hot": "全网算力 0.24%",
+    "share": 0.0024
+  },
+  {
+    "key": "randomy",
+    "symbol": "XCB",
+    "name": "XCB (XCB)",
+    "algo": "randomy",
+    "hot": "全网算力 0.24%",
+    "share": 0.0024
+  },
+  {
+    "key": "randomx-epic",
+    "symbol": "EPIC-RANDOMX",
+    "name": "EPIC-RANDOMX (EPIC-RANDOMX)",
+    "algo": "randomx-epic",
+    "hot": "全网算力 <0.1%",
+    "share": 0.0008
+  }
+]

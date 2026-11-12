@@ -1,0 +1,67 @@
+{
+  "gpu": "GeForce RTX 4060",
+  "brand": "nvidia",
+  "tdp": 115,
+  "updated_at": "2026-11-12T07:25:58.616458Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.02532,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "core_clock": 200,
+        "power_limit": 115
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+200",
+        "mem_offset": "+0",
+        "power_limit_percent": "100%"
+      },
+      "windows_miner_bat_args": "--cclock +200 --pl 115"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.02532,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "core_clock": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": ""
+    },
+    "DNX (Dynex)": {
+      "rating": 0.02532,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "core_clock": 0,
+        "power_limit": 140
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "122%"
+      },
+      "windows_miner_bat_args": "--pl 140"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.02532,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "core_clock": 200,
+        "power_limit": 115
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+200",
+        "mem_offset": "+0",
+        "power_limit_percent": "100%"
+      },
+      "windows_miner_bat_args": "--cclock +200 --pl 115"
+    }
+  }
+}

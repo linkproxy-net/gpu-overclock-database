@@ -1,0 +1,103 @@
+{
+  "gpu": "Radeon RX 580",
+  "brand": "amd",
+  "tdp": 185,
+  "updated_at": "2026-11-12T07:28:10.944442Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.01619,
+      "miners_count": 12,
+      "hiveos_linux": {
+        "mem_clock": 2050,
+        "core_clock": 1150,
+        "core_state": 1
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1150 (需按Ctrl+F锁频)",
+        "mem_offset": "+2050",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1150 --mclock +2050"
+    },
+    "RVN (Ravencoin)": {
+      "rating": 0.07018,
+      "miners_count": 52,
+      "hiveos_linux": {
+        "mem_clock": 1500,
+        "core_clock": 1100,
+        "core_state": 1
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1100 (需按Ctrl+F锁频)",
+        "mem_offset": "+1500",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1100 --mclock +1500"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.01484,
+      "miners_count": 11,
+      "hiveos_linux": {
+        "mem_clock": 2000,
+        "core_clock": 1150,
+        "core_state": 3
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1150 (需按Ctrl+F锁频)",
+        "mem_offset": "+2000",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1150 --mclock +2000"
+    },
+    "DNX (Dynex)": {
+      "rating": 0.00405,
+      "miners_count": 3,
+      "hiveos_linux": {
+        "mem_clock": 1900,
+        "core_clock": 1190,
+        "core_state": 2
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1190 (需按Ctrl+F锁频)",
+        "mem_offset": "+1900",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1190 --mclock +1900"
+    },
+    "NEXA (Nexa)": {
+      "rating": 0.13725,
+      "miners_count": 7,
+      "hiveos_linux": {
+        "mem_clock": 1960,
+        "core_clock": 1100
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1100 (需按Ctrl+F锁频)",
+        "mem_offset": "+1960",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1100 --mclock +1960"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.07018,
+      "miners_count": 52,
+      "hiveos_linux": {
+        "mem_clock": 1500,
+        "core_clock": 1100,
+        "core_state": 1
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1100 (需按Ctrl+F锁频)",
+        "mem_offset": "+1500",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1100 --mclock +1500"
+    }
+  }
+}

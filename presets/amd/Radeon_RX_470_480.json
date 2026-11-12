@@ -1,0 +1,40 @@
+{
+  "gpu": "Radeon RX 470/480",
+  "brand": "amd",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:28:59.646939Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 1,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 1200,
+        "core_clock": 1200,
+        "core_state": 5
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1200 (需按Ctrl+F锁频)",
+        "mem_offset": "+1200",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1200 --mclock +1200"
+    },
+    "CLORE / NEOX": {
+      "rating": 1,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 1200,
+        "core_clock": 1200,
+        "core_state": 5
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1200 (需按Ctrl+F锁频)",
+        "mem_offset": "+1200",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1200 --mclock +1200"
+    }
+  }
+}

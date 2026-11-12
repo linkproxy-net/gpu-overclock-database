@@ -1,0 +1,118 @@
+{
+  "gpu": "GeForce RTX 3080",
+  "brand": "nvidia",
+  "tdp": 320,
+  "updated_at": "2026-11-12T07:25:05.970701Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.00856,
+      "miners_count": 17,
+      "hiveos_linux": {
+        "mem_clock": 0,
+        "core_clock": 250,
+        "power_limit": 300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+250",
+        "mem_offset": "+0",
+        "power_limit_percent": "94%"
+      },
+      "windows_miner_bat_args": "--cclock +250 --pl 300"
+    },
+    "RVN (Ravencoin)": {
+      "rating": 0.01818,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 2000,
+        "core_clock": 100,
+        "power_limit": 260
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+100",
+        "mem_offset": "+1000",
+        "power_limit_percent": "81%"
+      },
+      "windows_miner_bat_args": "--cclock +100 --mclock +1000 --pl 260"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.03636,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "core_clock": 150,
+        "power_limit": 300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+150",
+        "mem_offset": "+0",
+        "power_limit_percent": "94%"
+      },
+      "windows_miner_bat_args": "--cclock +150 --pl 300"
+    },
+    "DNX (Dynex)": {
+      "rating": 0.07273,
+      "miners_count": 4,
+      "hiveos_linux": {
+        "core_clock": 200,
+        "power_limit": 250
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+200",
+        "mem_offset": "+0",
+        "power_limit_percent": "78%"
+      },
+      "windows_miner_bat_args": "--cclock +200 --pl 250"
+    },
+    "CFX (Conflux)": {
+      "rating": 0.2,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 500,
+        "core_clock": 100,
+        "power_limit": 250
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+100",
+        "mem_offset": "+250",
+        "power_limit_percent": "78%"
+      },
+      "windows_miner_bat_args": "--cclock +100 --mclock +250 --pl 250"
+    },
+    "NEXA (Nexa)": {
+      "rating": 0.00403,
+      "miners_count": 8,
+      "hiveos_linux": {
+        "mem_clock": -1800,
+        "core_clock": 135,
+        "power_limit": 190
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+135",
+        "mem_offset": "-900",
+        "power_limit_percent": "59%"
+      },
+      "windows_miner_bat_args": "--cclock +135 --mclock -900 --pl 190"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.01818,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 2000,
+        "core_clock": 100,
+        "power_limit": 260
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+100",
+        "mem_offset": "+1000",
+        "power_limit_percent": "81%"
+      },
+      "windows_miner_bat_args": "--cclock +100 --mclock +1000 --pl 260"
+    }
+  }
+}

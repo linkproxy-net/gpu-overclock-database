@@ -1,0 +1,51 @@
+{
+  "gpu": "GeForce RTX 5080",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:25:23.796221Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.01606,
+      "miners_count": 4,
+      "hiveos_linux": {
+        "power_limit": 300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "150%"
+      },
+      "windows_miner_bat_args": "--pl 300"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.01205,
+      "miners_count": 3,
+      "hiveos_linux": {
+        "core_clock": 499,
+        "power_limit": 290
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+499",
+        "mem_offset": "+0",
+        "power_limit_percent": "145%"
+      },
+      "windows_miner_bat_args": "--cclock +499 --pl 290"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.01606,
+      "miners_count": 4,
+      "hiveos_linux": {
+        "power_limit": 300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "150%"
+      },
+      "windows_miner_bat_args": "--pl 300"
+    }
+  }
+}

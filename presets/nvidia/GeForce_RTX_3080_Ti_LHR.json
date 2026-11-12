@@ -1,0 +1,54 @@
+{
+  "gpu": "GeForce RTX 3080 Ti LHR",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:27:26.714503Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.5,
+      "miners_count": 3,
+      "hiveos_linux": {
+        "mem_clock": 1600,
+        "power_limit": 280
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+800",
+        "power_limit_percent": "140%"
+      },
+      "windows_miner_bat_args": "--mclock +800 --pl 280"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.33333,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 2200,
+        "core_clock": 1700,
+        "power_limit": 214
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1700 (需按Ctrl+F锁频)",
+        "mem_offset": "+1100",
+        "power_limit_percent": "107%"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1700 --mclock +1100 --pl 214"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.5,
+      "miners_count": 3,
+      "hiveos_linux": {
+        "mem_clock": 1600,
+        "power_limit": 280
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+800",
+        "power_limit_percent": "140%"
+      },
+      "windows_miner_bat_args": "--mclock +800 --pl 280"
+    }
+  }
+}

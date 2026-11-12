@@ -1,0 +1,68 @@
+{
+  "gpu": "GeForce RTX 4070 SUPER",
+  "brand": "nvidia",
+  "tdp": 220,
+  "updated_at": "2026-11-12T07:25:32.148946Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.01887,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 3000,
+        "power_limit": 200
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+1500",
+        "power_limit_percent": "91%"
+      },
+      "windows_miner_bat_args": "--mclock +1500 --pl 200"
+    },
+    "CFX (Conflux)": {
+      "rating": 0.00943,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 240,
+        "power_limit": 210
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+240",
+        "mem_offset": "+0",
+        "power_limit_percent": "95%"
+      },
+      "windows_miner_bat_args": "--cclock +240 --pl 210"
+    },
+    "NEXA (Nexa)": {
+      "rating": 0.01887,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "core_clock": 320,
+        "power_limit": 200
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+320",
+        "mem_offset": "+0",
+        "power_limit_percent": "91%"
+      },
+      "windows_miner_bat_args": "--cclock +320 --pl 200"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.01887,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 3000,
+        "power_limit": 200
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+1500",
+        "power_limit_percent": "91%"
+      },
+      "windows_miner_bat_args": "--mclock +1500 --pl 200"
+    }
+  }
+}

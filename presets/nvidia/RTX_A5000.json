@@ -1,0 +1,53 @@
+{
+  "gpu": "RTX A5000",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:27:17.511831Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.05714,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 1000,
+        "power_limit": 230
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+500",
+        "power_limit_percent": "115%"
+      },
+      "windows_miner_bat_args": "--mclock +500 --pl 230"
+    },
+    "CFX (Conflux)": {
+      "rating": 0.02857,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 2200,
+        "core_clock": 300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+300",
+        "mem_offset": "+1100",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--cclock +300 --mclock +1100"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.05714,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 1000,
+        "power_limit": 230
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+500",
+        "power_limit_percent": "115%"
+      },
+      "windows_miner_bat_args": "--mclock +500 --pl 230"
+    }
+  }
+}

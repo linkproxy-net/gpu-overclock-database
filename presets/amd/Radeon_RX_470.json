@@ -1,0 +1,71 @@
+{
+  "gpu": "Radeon RX 470",
+  "brand": "amd",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:28:28.661910Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.02,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 1850,
+        "core_clock": 1050,
+        "core_state": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1050 (需按Ctrl+F锁频)",
+        "mem_offset": "+1850",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1050 --mclock +1850"
+    },
+    "RVN (Ravencoin)": {
+      "rating": 0.12963,
+      "miners_count": 7,
+      "hiveos_linux": {
+        "mem_clock": 1500,
+        "core_clock": 1100,
+        "core_state": 1
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1100 (需按Ctrl+F锁频)",
+        "mem_offset": "+1500",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1100 --mclock +1500"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.07407,
+      "miners_count": 4,
+      "hiveos_linux": {
+        "mem_clock": 1,
+        "core_clock": 1050
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1050 (需按Ctrl+F锁频)",
+        "mem_offset": "+1",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1050 --mclock +1"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.12963,
+      "miners_count": 7,
+      "hiveos_linux": {
+        "mem_clock": 1500,
+        "core_clock": 1100,
+        "core_state": 1
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1100 (需按Ctrl+F锁频)",
+        "mem_offset": "+1500",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1100 --mclock +1500"
+    }
+  }
+}

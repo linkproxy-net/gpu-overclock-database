@@ -1,0 +1,71 @@
+{
+  "gpu": "GeForce RTX 4090",
+  "tdp": 450,
+  "updated_at": "2026-11-12T03:50:21.693593Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.00901,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 330,
+        "mem_clock": null,
+        "power_limit_watt": 425
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+330",
+        "mem_offset": "+0",
+        "power_limit_percent": "94%"
+      },
+      "windows_miner_bat_args": "--cclock +330 --pl 425"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.00901,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 300,
+        "mem_clock": null,
+        "power_limit_watt": 360
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+300",
+        "mem_offset": "+0",
+        "power_limit_percent": "80%"
+      },
+      "windows_miner_bat_args": "--cclock +300 --pl 360"
+    },
+    "CFX (Conflux)": {
+      "rating": 0.25,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 250,
+        "mem_clock": 0,
+        "power_limit_watt": 350
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+250",
+        "mem_offset": "+0",
+        "power_limit_percent": "78%"
+      },
+      "windows_miner_bat_args": "--cclock +250 --pl 350"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.00901,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 330,
+        "mem_clock": null,
+        "power_limit_watt": 425
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+330",
+        "mem_offset": "+0",
+        "power_limit_percent": "94%"
+      },
+      "windows_miner_bat_args": "--cclock +330 --pl 425"
+    }
+  }
+}

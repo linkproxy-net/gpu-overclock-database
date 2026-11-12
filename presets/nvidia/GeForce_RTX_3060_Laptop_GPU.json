@@ -1,0 +1,50 @@
+{
+  "gpu": "GeForce RTX 3060 Laptop GPU",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:26:07.747040Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.08247,
+      "miners_count": 8,
+      "hiveos_linux": {
+        "mem_clock": 800
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+400",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--mclock +400"
+    },
+    "CFX (Conflux)": {
+      "rating": 0.05155,
+      "miners_count": 5,
+      "hiveos_linux": {
+        "core_clock": 195
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+195",
+        "mem_offset": "+0",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--cclock +195"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.08247,
+      "miners_count": 8,
+      "hiveos_linux": {
+        "mem_clock": 800
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+400",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--mclock +400"
+    }
+  }
+}

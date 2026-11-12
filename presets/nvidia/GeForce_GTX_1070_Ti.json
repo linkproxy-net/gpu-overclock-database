@@ -1,0 +1,23 @@
+{
+  "gpu": "GeForce GTX 1070 Ti",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:26:51.840547Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.04167,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 1450,
+        "power_limit": 120
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+725",
+        "power_limit_percent": "60%"
+      },
+      "windows_miner_bat_args": "--mclock +725 --pl 120"
+    }
+  }
+}

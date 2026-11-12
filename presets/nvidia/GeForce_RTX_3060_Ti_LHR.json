@@ -1,0 +1,53 @@
+{
+  "gpu": "GeForce RTX 3060 Ti LHR",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:27:00.612320Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.05128,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 950,
+        "power_limit": 145
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+475",
+        "power_limit_percent": "72%"
+      },
+      "windows_miner_bat_args": "--mclock +475 --pl 145"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.28205,
+      "miners_count": 11,
+      "hiveos_linux": {
+        "mem_clock": 1000,
+        "power_limit": 100
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+500",
+        "power_limit_percent": "50%"
+      },
+      "windows_miner_bat_args": "--mclock +500 --pl 100"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.05128,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 950,
+        "power_limit": 145
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+475",
+        "power_limit_percent": "72%"
+      },
+      "windows_miner_bat_args": "--mclock +475 --pl 145"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "gpu": "P106-100",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:25:58.509198Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.09677,
+      "miners_count": 15,
+      "hiveos_linux": {
+        "mem_clock": 200,
+        "core_clock": 80,
+        "power_limit": 60
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+80",
+        "mem_offset": "+100",
+        "power_limit_percent": "30%"
+      },
+      "windows_miner_bat_args": "--cclock +80 --mclock +100 --pl 60"
+    },
+    "RVN (Ravencoin)": {
+      "rating": 0.33333,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 0,
+        "core_clock": 0,
+        "power_limit": 120
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "60%"
+      },
+      "windows_miner_bat_args": "--pl 120"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.33333,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 0,
+        "core_clock": 0,
+        "power_limit": 120
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "60%"
+      },
+      "windows_miner_bat_args": "--pl 120"
+    }
+  }
+}

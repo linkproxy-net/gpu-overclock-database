@@ -1,0 +1,38 @@
+{
+  "gpu": "Radeon RX 6600 series",
+  "brand": "amd",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:30:39.343898Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.33333,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 950,
+        "core_clock": 1250
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1250 (需按Ctrl+F锁频)",
+        "mem_offset": "+950",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1250 --mclock +950"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.33333,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 950,
+        "core_clock": 1250
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1250 (需按Ctrl+F锁频)",
+        "mem_offset": "+950",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1250 --mclock +950"
+    }
+  }
+}

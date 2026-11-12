@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPU Mining Overclock Database | 全网显卡超频速查面板</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .card { background-color: #161b22; border: 1px solid #30363d; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #0d1117; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+  </style>
+</head>
+<body class="p-4 md:p-8 max-w-6xl mx-auto">
+
+  <header class="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-gray-800 gap-4">
+    <div>
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">⚡</span>
+        <h1 class="text-2xl font-bold text-white tracking-tight">GPU Overclock Database</h1>
+        <span class="text-xs bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded-full font-mono">支持拼音/模糊搜索</span>
+      </div>
+      <p class="text-sm text-gray-400 mt-1">基于 HiveOS 全网真实矿机数据 • 已自动完成 Windows / Linux 双端换算</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-emerald-400 font-mono">N卡显存换算: 算力100%一致</span>
+    </div>
+  </header>
+
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+    <!-- GPU Searchable Combobox -->
+    <div class="card p-3 rounded-lg relative">
+      <label class="block text-xs font-semibold text-gray-400 mb-1">显卡型号 (支持模糊搜索)</label>
+      <div class="relative">
+        <input type="text" id="gpuInput" placeholder="输入搜索: 3070 / 4090 / 580..." 
+               class="w-full bg-[#0d1117] border border-gray-700 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-blue-500 pr-8" autocomplete="off" />
+        <span class="absolute right-2.5 top-2.5 text-xs text-gray-500 pointer-events-none">🔍</span>
+      </div>
+      <div id="gpuDropdown" class="hidden absolute left-0 right-0 top-full mt-1 bg-[#161b22] border border-gray-700 rounded-lg shadow-2xl max-h-64 overflow-y-auto z-50 custom-scrollbar p-1">
+      </div>
+    </div>
+
+    <!-- Algo/Coin Searchable Combobox -->
+    <div class="card p-3 rounded-lg relative">
+      <label class="block text-xs font-semibold text-gray-400 mb-1">目标币种 / 算法 (支持模糊搜索)</label>
+      <div class="relative">
+        <input type="text" id="algoInput" placeholder="搜索 83+ 种币: prl / kas / alph / rvn / etc..." 
+               class="w-full bg-[#0d1117] border border-emerald-700/60 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500 pr-8" autocomplete="off" />
+        <span class="absolute right-2.5 top-2.5 text-xs text-gray-500 pointer-events-none">🪙</span>
+      </div>
+      <div id="algoDropdown" class="hidden absolute left-0 right-0 top-full mt-1 bg-[#161b22] border border-gray-700 rounded-lg shadow-2xl max-h-64 overflow-y-auto z-50 custom-scrollbar p-1">
+      </div>
+    </div>
+
+    <!-- Mode Tabs -->
+    <div class="card p-3 rounded-lg">
+      <label class="block text-xs font-semibold text-gray-400 mb-1">目标系统 / 工具环境</label>
+      <div class="grid grid-cols-3 gap-1 bg-[#0d1117] p-1 rounded border border-gray-800 text-xs text-center font-medium">
+        <button id="tabWin" onclick="setMode('win')" class="py-1.5 rounded bg-blue-600 text-white font-semibold transition">Windows 小飞机</button>
+        <button id="tabBat" onclick="setMode('bat')" class="py-1.5 rounded text-gray-400 hover:text-white transition">内核 .bat 参数</button>
+        <button id="tabHive" onclick="setMode('hive')" class="py-1.5 rounded text-gray-400 hover:text-white transition">HiveOS (Linux)</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="space-y-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card p-4 rounded-xl border-l-4 border-blue-500">
+        <div class="text-xs text-gray-400 uppercase font-mono">核心设定 (Core)</div>
+        <div id="dispCore" class="text-2xl font-bold text-white mt-1">+150 MHz</div>
+        <div id="dispCoreNote" class="text-xs text-gray-500 mt-1">微星小飞机核心偏移量</div>
+      </div>
+
+      <div class="card p-4 rounded-xl border-l-4 border-emerald-500">
+        <div class="text-xs text-gray-400 uppercase font-mono">显存设定 (Memory)</div>
+        <div id="dispMem" class="text-2xl font-bold text-white mt-1">默认 / 0</div>
+        <div id="dispMemNote" class="text-xs text-emerald-400 mt-1">重核心算法无需超显存</div>
+      </div>
+
+      <div class="card p-4 rounded-xl border-l-4 border-amber-500">
+        <div class="text-xs text-gray-400 uppercase font-mono">功耗墙 (Power Limit)</div>
+        <div id="dispPL" class="text-2xl font-bold text-white mt-1">68% <span class="text-sm font-normal text-gray-400">(150W)</span></div>
+        <div id="dispPLNote" class="text-xs text-gray-500 mt-1">根据标称 220W 算出的滑块位置</div>
+      </div>
+
+      <div class="card p-4 rounded-xl border-l-4 border-purple-500">
+        <div class="text-xs text-gray-400 uppercase font-mono">矿工共识度</div>
+        <div id="dispRating" class="text-2xl font-bold text-purple-400 mt-1">Top 1 预设</div>
+        <div id="dispCount" class="text-xs text-gray-500 mt-1">76 台实测采用</div>
+      </div>
+    </div>
+
+    <div id="cliBox" class="card p-4 rounded-xl">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs font-mono text-gray-400 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Windows 挖矿软件 .bat 一键复制参数 (Gminer / Rigel / Lolminer)
+        </span>
+        <button onclick="copyCli()" id="copyBtn" class="text-xs bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-600 px-3 py-1 rounded transition">
+          复制参数
+        </button>
+      </div>
+      <div class="bg-[#090d13] p-3 rounded font-mono text-sm text-emerald-400 overflow-x-auto border border-gray-800" id="dispBatCmd">
+        --cclock +150 --pl 150
+      </div>
+    </div>
+
+    <div class="card p-4 rounded-xl bg-blue-950/20 border-blue-800/40 flex items-start gap-3">
+      <span class="text-blue-400 text-lg">ℹ️</span>
+      <div class="text-xs leading-relaxed text-blue-200/90">
+        <p class="font-semibold text-blue-300">为什么 Windows 显存填一半算力不仅没少，反而一样？</p>
+        <p class="text-gray-300 mt-0.5">Linux (HiveOS) 驱动按双倍速率（Data Rate）计量；Windows 小飞机按物理基准时钟（Base Clock）计量。在 Windows 拉 +1000 实际物理频率正好等价于 Linux 的 +2000，<b>算力 100% 完全一样，绝不会少算力</b>。如果 Windows 硬拉 2000 则相当于超频 4000，会瞬间驱动崩溃黑屏。</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const gpuList = [
+      { name: "GeForce RTX 4090", tdp: 450, group: "NVIDIA RTX 40" },
+      { name: "GeForce RTX 4080 SUPER", tdp: 320, group: "NVIDIA RTX 40" },
+      { name: "GeForce RTX 4080", tdp: 320, group: "NVIDIA RTX 40" },
+      { name: "GeForce RTX 4070 Ti SUPER", tdp: 285, group: "NVIDIA RTX 40" },
+      { name: "GeForce RTX 4070 Ti", tdp: 285, group: "NVIDIA RTX 40" },
+      { name: "GeForce RTX 4070 SUPER", tdp: 220, group: "NVIDIA RTX 40" },
+      { name: "GeForce RTX 4070", tdp: 200, group: "NVIDIA RTX 40" },
+      { name: "GeForce RTX 4060 Ti", tdp: 160, group: "NVIDIA RTX 40" },
+      { name: "GeForce RTX 4060", tdp: 115, group: "NVIDIA RTX 40" },
+      { name: "GeForce RTX 3090 Ti", tdp: 450, group: "NVIDIA RTX 30" },
+      { name: "GeForce RTX 3090", tdp: 350, group: "NVIDIA RTX 30" },
+      { name: "GeForce RTX 3080 Ti", tdp: 350, group: "NVIDIA RTX 30" },
+      { name: "GeForce RTX 3080", tdp: 320, group: "NVIDIA RTX 30" },
+      { name: "GeForce RTX 3070 Ti", tdp: 290, group: "NVIDIA RTX 30" },
+      { name: "GeForce RTX 3070", tdp: 220, group: "NVIDIA RTX 30" },
+      { name: "GeForce RTX 3060 Ti", tdp: 200, group: "NVIDIA RTX 30" },
+      { name: "GeForce RTX 3060", tdp: 170, group: "NVIDIA RTX 30" },
+      { name: "GeForce RTX 2080 Ti", tdp: 250, group: "NVIDIA RTX 20" },
+      { name: "GeForce RTX 2070 SUPER", tdp: 215, group: "NVIDIA RTX 20" },
+      { name: "GeForce RTX 2060 SUPER", tdp: 175, group: "NVIDIA RTX 20" },
+      { name: "GeForce GTX 1660 SUPER", tdp: 125, group: "NVIDIA GTX 16" },
+      { name: "GeForce GTX 1660 Ti", tdp: 120, group: "NVIDIA GTX 16" },
+      { name: "CMP 50HX", tdp: 225, group: "NVIDIA CMP 矿卡" },
+      { name: "CMP 40HX", tdp: 185, group: "NVIDIA CMP 矿卡" },
+      { name: "CMP 30HX", tdp: 125, group: "NVIDIA CMP 矿卡" },
+      { name: "Radeon RX 7900 XTX", tdp: 355, group: "AMD Radeon" },
+      { name: "Radeon RX 6800 XT", tdp: 300, group: "AMD Radeon" },
+      { name: "Radeon RX 6700 XT", tdp: 230, group: "AMD Radeon" },
+      { name: "Radeon RX 6600 XT", tdp: 160, group: "AMD Radeon" },
+      { name: "Radeon RX 580", tdp: 185, group: "AMD Radeon" },
+      { name: "Radeon RX 570", tdp: 150, group: "AMD Radeon" }
+    ];
+
+    const algoList = [{"key": "pearlhash", "symbol": "PRL", "name": "PRL (Oyster)", "algo": "pearlhash", "hot": "全网算力 28.22%", "share": 0.2822}, {"key": "poseidon2", "symbol": "QUAN", "name": "QUAN (Quantis Network)", "algo": "poseidon2", "hot": "全网算力 8.22%", "share": 0.0822}, {"key": "kawpow", "symbol": "RVN", "name": "RVN (Ravencoin)", "algo": "kawpow", "hot": "全网算力 0.75%", "share": 0.0075}, {"key": "etchash", "symbol": "ETC", "name": "ETC (Ethereum Classic)", "algo": "etchash", "hot": "全网算力 0.36%", "share": 0.0036}, {"key": "progpow-quai", "symbol": "QUAI", "name": "QUAI (QUAI)", "algo": "progpow-quai", "hot": "全网算力 0.14%", "share": 0.0014}, {"key": "progpowz", "symbol": "ZANO", "name": "ZANO (Zano)", "algo": "progpowz", "hot": "全网算力 0.36%", "share": 0.0036}, {"key": "xelis", "symbol": "XEL", "name": "XEL (Elastic)", "algo": "xelis", "hot": "全网算力 0.15%", "share": 0.0015}, {"key": "autolykos2", "symbol": "ERG", "name": "ERG (Ergo)", "algo": "autolykos2", "hot": "全网算力 0.24%", "share": 0.0024}, {"key": "octopus", "symbol": "CFX", "name": "CFX (CRYPTOFOREX)", "algo": "octopus", "hot": "全网算力 0.15%", "share": 0.0015}, {"key": "heavyhash", "symbol": "KAS", "name": "KAS (KAS)", "algo": "heavyhash", "hot": "全网算力 <0.1%", "share": 0.0003}, {"key": "blake3", "symbol": "ALPH", "name": "ALPH (ALPH)", "algo": "blake3", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "dynexsolve", "symbol": "DNX", "name": "DNX (DNX)", "algo": "dynexsolve", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "quibic", "symbol": "QUBIC", "name": "QUBIC (QUBIC)", "algo": "quibic", "hot": "全网算力 0.77%", "share": 0.0077}, {"key": "qhash", "symbol": "QTC", "name": "QTC (QTC)", "algo": "qhash", "hot": "全网算力 1.48%", "share": 0.0148}, {"key": "randomscash", "symbol": "SCASH", "name": "SCASH (SCASH)", "algo": "randomscash", "hot": "全网算力 0.70%", "share": 0.007}, {"key": "randomdrgx", "symbol": "DRGX", "name": "DRGX (DRGX)", "algo": "randomdrgx", "hot": "全网算力 0.62%", "share": 0.0062}, {"key": "kawpow", "symbol": "CLORE", "name": "CLORE (Clore.ai)", "algo": "kawpow", "hot": "主流显卡币", "share": 0.0005}, {"key": "zelhash", "symbol": "FLUX", "name": "FLUX (Flux)", "algo": "zelhash", "hot": "主流显卡币", "share": 0.0005}, {"key": "mtp", "symbol": "FIRO", "name": "FIRO (Firo)", "algo": "mtp", "hot": "全网算力 <0.1%", "share": 0.0003}, {"key": "nexapow", "symbol": "NEXA", "name": "NEXA (NEXA)", "algo": "nexapow", "hot": "全网算力 <0.1%", "share": 0.0003}, {"key": "blake3-iron", "symbol": "IRON", "name": "IRON (IRON)", "algo": "blake3-iron", "hot": "全网算力 <0.1%", "share": 0.0007}, {"key": "sha512256d", "symbol": "RXD", "name": "RXD (Radiant)", "algo": "sha512256d", "hot": "主流显卡币", "share": 0.0005}, {"key": "equihash 150/5/3", "symbol": "BEAM", "name": "BEAM (Beam)", "algo": "equihash 150/5/3", "hot": "全网算力 <0.1%", "share": 0.0004}, {"key": "kawpow", "symbol": "NEOX", "name": "NEOX (NEOX)", "algo": "kawpow", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "abel", "symbol": "ABEL", "name": "ABEL (ABEL)", "algo": "abel", "hot": "全网算力 0.18%", "share": 0.0018}, {"key": "verushash", "symbol": "VRSC", "name": "VRSC (VerusCoin)", "algo": "verushash", "hot": "全网算力 0.21%", "share": 0.0021}, {"key": "kawpow", "symbol": "NICEHASH-KAWPOW", "name": "NICEHASH-KAWPOW (NICEHASH-KAWPOW)", "algo": "kawpow", "hot": "全网算力 0.19%", "share": 0.0019}, {"key": "randomjuno", "symbol": "JUNO", "name": "JUNO (JUNO)", "algo": "randomjuno", "hot": "全网算力 0.16%", "share": 0.0016}, {"key": "pearlhash", "symbol": "UNMINEABLE-PEARLPOW", "name": "UNMINEABLE-PEARLPOW (UNMINEABLE-PEARLPOW)", "algo": "pearlhash", "hot": "全网算力 0.12%", "share": 0.0012}, {"key": "rentals", "symbol": "CLORE-RENTALS", "name": "CLORE-RENTALS (CLORE-RENTALS)", "algo": "rentals", "hot": "全网算力 0.10%", "share": 0.001}, {"key": "equihash 192/7", "symbol": "YEC", "name": "YEC (Ycash)", "algo": "equihash 192/7", "hot": "全网算力 <0.1%", "share": 0.0009}, {"key": "progpow", "symbol": "EPIC-PROGPOW", "name": "EPIC-PROGPOW (EPIC-PROGPOW)", "algo": "progpow", "hot": "全网算力 <0.1%", "share": 0.0008}, {"key": "randomx2b", "symbol": "CONN", "name": "CONN (CONN)", "algo": "randomx2b", "hot": "全网算力 <0.1%", "share": 0.0008}, {"key": "cuckaroo 29", "symbol": "XTM-CUCKAROO29", "name": "XTM-CUCKAROO29 (XTM-CUCKAROO29)", "algo": "cuckaroo 29", "hot": "全网算力 <0.1%", "share": 0.0006}, {"key": "gr", "symbol": "RTM", "name": "RTM (RTM)", "algo": "gr", "hot": "全网算力 <0.1%", "share": 0.0006}, {"key": "sha3solidity", "symbol": "ETI", "name": "ETI (EtherInc)", "algo": "sha3solidity", "hot": "全网算力 <0.1%", "share": 0.0006}, {"key": "dsha256", "symbol": "XDAG", "name": "XDAG (XDAG)", "algo": "dsha256", "hot": "全网算力 <0.1%", "share": 0.0005}, {"key": "karlsenhash", "symbol": "KLS", "name": "KLS (KLS)", "algo": "karlsenhash", "hot": "全网算力 <0.1%", "share": 0.0005}, {"key": "keryxhash", "symbol": "KRX", "name": "KRX (KRX)", "algo": "keryxhash", "hot": "全网算力 <0.1%", "share": 0.0005}, {"key": "verthash", "symbol": "VTC", "name": "VTC (Vertcoin)", "algo": "verthash", "hot": "全网算力 <0.1%", "share": 0.0004}, {"key": "blake3_seq", "symbol": "MDS", "name": "MDS (MediShares)", "algo": "blake3_seq", "hot": "全网算力 <0.1%", "share": 0.0004}, {"key": "ethash", "symbol": "ETHW", "name": "ETHW (ETHW)", "algo": "ethash", "hot": "全网算力 <0.1%", "share": 0.0004}, {"key": "randomx-yada", "symbol": "YDA", "name": "YDA (YDA)", "algo": "randomx-yada", "hot": "全网算力 <0.1%", "share": 0.0003}, {"key": "cryptonight", "symbol": "QWC", "name": "QWC (Qwertycoin)", "algo": "cryptonight", "hot": "全网算力 <0.1%", "share": 0.0003}, {"key": "kawpow", "symbol": "XNA", "name": "XNA (XNA)", "algo": "kawpow", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "equihash 192/7", "symbol": "ZCL", "name": "ZCL (ZClassic)", "algo": "equihash 192/7", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "octopus", "symbol": "NICEHASH-OCTOPUS", "name": "NICEHASH-OCTOPUS (NICEHASH-OCTOPUS)", "algo": "octopus", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "blake256r14", "symbol": "DCR", "name": "DCR (Decred)", "algo": "blake256r14", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "proof-of-inference", "symbol": "TSC", "name": "TSC (Thunderstake)", "algo": "proof-of-inference", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "vds", "symbol": "VOLLAR", "name": "VOLLAR (V-Dimension)", "algo": "vds", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "cuckoo cycle", "symbol": "AE", "name": "AE (Aeternity)", "algo": "cuckoo cycle", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "ethash", "symbol": "NICEHASH-ETHASH", "name": "NICEHASH-ETHASH (NICEHASH-ETHASH)", "algo": "ethash", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "lyra2zz", "symbol": "LAX", "name": "LAX (LAX)", "algo": "lyra2zz", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "ethash", "symbol": "COMINING-ETHASH", "name": "COMINING-ETHASH (COMINING-ETHASH)", "algo": "ethash", "hot": "全网算力 <0.1%", "share": 0.0002}, {"key": "minotaurx", "symbol": "AVN", "name": "AVN (AVN)", "algo": "minotaurx", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "equihash", "symbol": "ZEC", "name": "ZEC (Zcash)", "algo": "equihash", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "etchash", "symbol": "NICEHASH-ETCHASH", "name": "NICEHASH-ETCHASH (NICEHASH-ETCHASH)", "algo": "etchash", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "neoscrypt", "symbol": "PXC", "name": "PXC (PXC)", "algo": "neoscrypt", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "sha3d", "symbol": "KCN", "name": "KCN (KCN)", "algo": "sha3d", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "beamhashv3", "symbol": "NICEHASH-BEAMV3", "name": "NICEHASH-BEAMV3 (NICEHASH-BEAMV3)", "algo": "beamhashv3", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "autolykos2", "symbol": "NICEHASH-AUTOLYKOS", "name": "NICEHASH-AUTOLYKOS (NICEHASH-AUTOLYKOS)", "algo": "autolykos2", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "cryptix", "symbol": "CPAY", "name": "CPAY (Cryptopay)", "algo": "cryptix", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "tonpow", "symbol": "TON", "name": "TON (TON)", "algo": "tonpow", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "cuckoo", "symbol": "GRIN", "name": "GRIN (Grin)", "algo": "cuckoo", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "nexapow", "symbol": "NICEHASH-NEXAPOW", "name": "NICEHASH-NEXAPOW (NICEHASH-NEXAPOW)", "algo": "nexapow", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "randomx-wow", "symbol": "WOW", "name": "WOW (WowSecret)", "algo": "randomx-wow", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "poseidon2b", "symbol": "NOID", "name": "NOID (NOID)", "algo": "poseidon2b", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "vela", "symbol": "VELA", "name": "VELA (VELA)", "algo": "vela", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "progpow-telestai", "symbol": "TLS", "name": "TLS (TLS)", "algo": "progpow-telestai", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "kawpow", "symbol": "ABRS", "name": "ABRS (ABRS)", "algo": "kawpow", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "fishhash", "symbol": "NICEHASH-FISHHASH", "name": "NICEHASH-FISHHASH (NICEHASH-FISHHASH)", "algo": "fishhash", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "randomx-arq", "symbol": "PDC", "name": "PDC (PDC)", "algo": "randomx-arq", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "neoscrypt", "symbol": "ZPOOL-NEOSCRYPT", "name": "ZPOOL-NEOSCRYPT (ZPOOL-NEOSCRYPT)", "algo": "neoscrypt", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "x16rv2", "symbol": "PEXA", "name": "PEXA (PEXA)", "algo": "x16rv2", "hot": "全网算力 <0.1%", "share": 0.0001}, {"key": "randomx", "symbol": "XMR", "name": "XMR (Monero)", "algo": "randomx", "hot": "全网算力 31.73%", "share": 0.3173}, {"key": "randomx", "symbol": "NICEHASH-RANDOMXMONERO", "name": "NICEHASH-RANDOMXMONERO (NICEHASH-RANDOMXMONERO)", "algo": "randomx", "hot": "全网算力 3.08%", "share": 0.0308}, {"key": "randomx", "symbol": "ZEPH", "name": "ZEPH (Zephyr)", "algo": "randomx", "hot": "全网算力 0.94%", "share": 0.0094}, {"key": "randomx", "symbol": "QRL", "name": "QRL (Quantum Resistant Ledger)", "algo": "randomx", "hot": "全网算力 0.52%", "share": 0.0052}, {"key": "randomx-epic", "symbol": "EPIC", "name": "EPIC (Epic Cash)", "algo": "randomx-epic", "hot": "全网算力 0.37%", "share": 0.0037}, {"key": "randomx", "symbol": "SAL", "name": "SAL (SalPay)", "algo": "randomx", "hot": "全网算力 0.25%", "share": 0.0025}, {"key": "randomx", "symbol": "XTM-RANDOMX", "name": "XTM-RANDOMX (XTM-RANDOMX)", "algo": "randomx", "hot": "全网算力 0.24%", "share": 0.0024}, {"key": "randomy", "symbol": "XCB", "name": "XCB (XCB)", "algo": "randomy", "hot": "全网算力 0.24%", "share": 0.0024}, {"key": "randomx-epic", "symbol": "EPIC-RANDOMX", "name": "EPIC-RANDOMX (EPIC-RANDOMX)", "algo": "randomx-epic", "hot": "全网算力 <0.1%", "share": 0.0008}];
+
+    const sampleData = {
+      "GeForce RTX 3070": {
+        tdp: 220,
+        pearlhash: { hive_c: 150, hive_m: 0, hive_pl: 150, rating: "Top 1 推荐", count: 76, note: "重核心算法，无需超显存" },
+        kawpow: { hive_c: 100, hive_m: 2000, hive_pl: 150, rating: "88.2%", count: 335 },
+        etchash: { hive_c: -500, hive_m: 2400, hive_pl: 125, rating: "94.5%", count: 1840 },
+        "progpow-quai": { hive_c: 200, hive_m: 0, hive_pl: 160, rating: "90.0%", count: 45 },
+        progpowz: { hive_c: 150, hive_m: 1600, hive_pl: 140, rating: "85.0%", count: 52 },
+        xelis: { hive_c: 1650, hive_m: 810, hive_pl: 120, rating: "92.0%", count: 110 }
+      },
+      "GeForce RTX 4090": {
+        tdp: 450,
+        pearlhash: { hive_c: 200, hive_m: 0, hive_pl: 275, rating: "Top 1 推荐", count: 18, note: "高效能功耗仅 275W" },
+        kawpow: { hive_c: 330, hive_m: 1600, hive_pl: 425, rating: "85.0%", count: 28 },
+        kheavyhash: { hive_c: 2400, hive_m: 810, hive_pl: 280, rating: "96.2%", count: 180 },
+        etchash: { hive_c: -300, hive_m: 2600, hive_pl: 250, rating: "92.1%", count: 64 }
+      },
+      "GeForce RTX 3060 Ti": {
+        tdp: 200,
+        pearlhash: { hive_c: 150, hive_m: 0, hive_pl: 150, rating: "Top 1 推荐", count: 95, note: "稳定不掉线参数" },
+        kawpow: { hive_c: 100, hive_m: 1800, hive_pl: 140, rating: "86.1%", count: 610 },
+        etchash: { hive_c: -500, hive_m: 2200, hive_pl: 120, rating: "95.0%", count: 2400 }
+      },
+      "GeForce RTX 4080": {
+        tdp: 320,
+        pearlhash: { hive_c: 225, hive_m: 0, hive_pl: 320, rating: "Top 1 推荐", count: 6 },
+        kawpow: { hive_c: 200, hive_m: 1400, hive_pl: 260, rating: "82.5%", count: 45 }
+      },
+      "Radeon RX 580": {
+        tdp: 185,
+        pearlhash: { hive_c: 1200, hive_m: 810, hive_pl: 110, rating: "Top 1 推荐", count: 12, is_amd: true },
+        etchash: { hive_c: 1150, hive_m: 2150, hive_pl: 95, rating: "89.4%", count: 4200, is_amd: true }
+      }
+    };
+
+    let selectedGPU = "GeForce RTX 3070";
+    let selectedAlgo = "pearlhash";
+    let currentMode = "win";
+
+    const gpuInput = document.getElementById("gpuInput");
+    const gpuDropdown = document.getElementById("gpuDropdown");
+
+    function renderGpuList(filter = "") {
+      const q = filter.trim().toLowerCase();
+      const filtered = gpuList.filter(g => g.name.toLowerCase().includes(q) || g.group.toLowerCase().includes(q));
+      if (!filtered.length) {
+        gpuDropdown.innerHTML = '<div class="p-2 text-xs text-gray-500 text-center">无匹配显卡</div>';
+        return;
+      }
+      gpuDropdown.innerHTML = filtered.map(g => `
+        <div onclick="selectGPU('${g.name}')" class="px-3 py-2 text-xs text-gray-200 hover:bg-blue-600/30 hover:text-white rounded cursor-pointer flex items-center justify-between ${g.name === selectedGPU ? 'bg-blue-600/20 text-blue-400 font-semibold' : ''}">
+          <span>${g.name}</span>
+          <span class="text-[10px] text-gray-500">${g.tdp}W</span>
+        </div>
+      `).join("");
+    }
+
+    function selectGPU(name) {
+      selectedGPU = name;
+      gpuInput.value = name;
+      gpuDropdown.classList.add("hidden");
+      updateDisplay();
+    }
+
+    gpuInput.addEventListener("focus", () => {
+      renderGpuList(gpuInput.value);
+      gpuDropdown.classList.remove("hidden");
+    });
+    gpuInput.addEventListener("input", (e) => {
+      renderGpuList(e.target.value);
+      gpuDropdown.classList.remove("hidden");
+    });
+
+    const algoInput = document.getElementById("algoInput");
+    const algoDropdown = document.getElementById("algoDropdown");
+
+    function renderAlgoList(filter = "") {
+      const q = filter.trim().toLowerCase();
+      const filtered = algoList.filter(a => a.name.toLowerCase().includes(q) || a.key.toLowerCase().includes(q));
+      if (!filtered.length) {
+        algoDropdown.innerHTML = '<div class="p-2 text-xs text-gray-500 text-center">无匹配币种</div>';
+        return;
+      }
+      algoDropdown.innerHTML = filtered.map(a => `
+        <div onclick="selectAlgo('${a.key}', '${a.name}')" class="px-3 py-2 text-xs text-gray-200 hover:bg-emerald-600/30 hover:text-white rounded cursor-pointer flex items-center justify-between ${a.key === selectedAlgo ? 'bg-emerald-600/20 text-emerald-400 font-semibold' : ''}">
+          <span>${a.name}</span>
+          <span class="text-[10px] text-emerald-400/80 font-mono">${a.hot}</span>
+        </div>
+      `).join("");
+    }
+
+    function selectAlgo(key, name) {
+      selectedAlgo = key;
+      algoInput.value = name;
+      algoDropdown.classList.add("hidden");
+      updateDisplay();
+    }
+
+    algoInput.addEventListener("focus", () => {
+      renderAlgoList(algoInput.value);
+      algoDropdown.classList.remove("hidden");
+    });
+    algoInput.addEventListener("input", (e) => {
+      renderAlgoList(e.target.value);
+      algoDropdown.classList.remove("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!gpuInput.contains(e.target) && !gpuDropdown.contains(e.target)) {
+        gpuDropdown.classList.add("hidden");
+      }
+      if (!algoInput.contains(e.target) && !algoDropdown.contains(e.target)) {
+        algoDropdown.classList.add("hidden");
+      }
+    });
+
+    function setMode(mode) {
+      currentMode = mode;
+      ["tabWin", "tabBat", "tabHive"].forEach(id => {
+        const btn = document.getElementById(id);
+        btn.className = "py-1.5 rounded text-gray-400 hover:text-white transition";
+      });
+      const activeId = mode === "win" ? "tabWin" : mode === "bat" ? "tabBat" : "tabHive";
+      document.getElementById(activeId).className = "py-1.5 rounded bg-blue-600 text-white font-semibold transition";
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      const gpuObj = gpuList.find(g => g.name === selectedGPU) || { name: selectedGPU, tdp: 200 };
+      const card = sampleData[selectedGPU] || sampleData["GeForce RTX 3070"];
+      const data = card[selectedAlgo] || { hive_c: 150, hive_m: 0, hive_pl: Math.round(gpuObj.tdp * 0.7), rating: "推荐设置", count: 20 };
+      const tdp = gpuObj.tdp;
+
+      const isAmd = selectedGPU.includes("Radeon") || data.is_amd;
+      const isLock = Math.abs(data.hive_c) >= 500;
+      const winMem = isAmd ? data.hive_m : Math.round((data.hive_m || 0) / 2);
+      const winPlPct = Math.round((data.hive_pl / tdp) * 100);
+
+      if (currentMode === "win") {
+        document.getElementById("dispCore").innerText = isLock ? `${data.hive_c} MHz` : `${data.hive_c > 0 ? "+" : ""}${data.hive_c} MHz`;
+        document.getElementById("dispCoreNote").innerText = isLock ? "锁定核心频率 (Ctrl+F)" : "微星小飞机核心偏移量";
+
+        document.getElementById("dispMem").innerText = winMem > 0 ? `+${winMem} MHz` : "默认 / 0";
+        document.getElementById("dispMemNote").innerText = data.note || (isAmd ? "AMD 显存设置值" : "✓ 已自动除以 2 (防蓝屏)");
+
+        document.getElementById("dispPL").innerHTML = `${winPlPct}% <span class="text-sm font-normal text-gray-400">(${data.hive_pl}W)</span>`;
+        document.getElementById("dispPLNote").innerText = `按出厂 ${tdp}W 算出的滑块位置`;
+      } else if (currentMode === "hive") {
+        document.getElementById("dispCore").innerText = `${data.hive_c}`;
+        document.getElementById("dispCoreNote").innerText = "HiveOS Linux Core Clock";
+
+        document.getElementById("dispMem").innerText = `${data.hive_m || 0}`;
+        document.getElementById("dispMemNote").innerText = "HiveOS 原生 Memory Clock";
+
+        document.getElementById("dispPL").innerHTML = `${data.hive_pl} W`;
+        document.getElementById("dispPLNote").innerText = "HiveOS Power Limit 绝对瓦数";
+      } else {
+        document.getElementById("dispCore").innerText = isLock ? `--lock-cclock ${data.hive_c}` : `--cclock ${data.hive_c}`;
+        document.getElementById("dispCoreNote").innerText = "内核核心启动参数";
+
+        document.getElementById("dispMem").innerText = winMem > 0 ? `--mclock ${winMem}` : "(不填显存)";
+        document.getElementById("dispMemNote").innerText = "内核显存参数";
+
+        document.getElementById("dispPL").innerText = `--pl ${data.hive_pl}`;
+        document.getElementById("dispPLNote").innerText = "内核绝对瓦数限制";
+      }
+
+      document.getElementById("dispRating").innerText = data.rating;
+      document.getElementById("dispCount").innerText = `${data.count} 台实测采用`;
+
+      let batParts = [];
+      if (isLock) batParts.push(`--lock-cclock ${data.hive_c}`);
+      else if (data.hive_c) batParts.push(`--cclock ${data.hive_c > 0 ? "+" : ""}${data.hive_c}`);
+      if (winMem > 0) batParts.push(`--mclock ${winMem}`);
+      if (data.hive_pl) batParts.push(`--pl ${data.hive_pl}`);
+
+      document.getElementById("dispBatCmd").innerText = batParts.join(" ") || "默认参数";
+    }
+
+    function copyCli() {
+      const text = document.getElementById("dispBatCmd").innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById("copyBtn");
+        btn.innerText = "已复制！";
+        btn.className = "text-xs bg-emerald-700 text-white px-3 py-1 rounded transition";
+        setTimeout(() => {
+          btn.innerText = "复制参数";
+          btn.className = "text-xs bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-600 px-3 py-1 rounded transition";
+        }, 1500);
+      });
+    }
+
+    gpuInput.value = selectedGPU;
+    algoInput.value = "PRL (Pearl / Oyster)";
+    updateDisplay();
+  </script>
+</body>
+</html>

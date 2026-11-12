@@ -1,0 +1,23 @@
+{
+  "gpu": "GeForce RTX 3090 Ti",
+  "brand": "nvidia",
+  "tdp": 450,
+  "updated_at": "2026-11-12T07:27:09.401769Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.16667,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 1600,
+        "power_limit": 310
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+800",
+        "power_limit_percent": "69%"
+      },
+      "windows_miner_bat_args": "--mclock +800 --pl 310"
+    }
+  }
+}

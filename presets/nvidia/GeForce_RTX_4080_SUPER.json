@@ -1,0 +1,38 @@
+{
+  "gpu": "GeForce RTX 4080 SUPER",
+  "brand": "nvidia",
+  "tdp": 320,
+  "updated_at": "2026-11-12T07:26:42.327505Z",
+  "presets": {
+    "DNX (Dynex)": {
+      "rating": 0.02083,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 260,
+        "power_limit": 320
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+260",
+        "mem_offset": "+0",
+        "power_limit_percent": "100%"
+      },
+      "windows_miner_bat_args": "--cclock +260 --pl 320"
+    },
+    "NEXA (Nexa)": {
+      "rating": 0.02083,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 225,
+        "power_limit": 300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+225",
+        "mem_offset": "+0",
+        "power_limit_percent": "94%"
+      },
+      "windows_miner_bat_args": "--cclock +225 --pl 300"
+    }
+  }
+}

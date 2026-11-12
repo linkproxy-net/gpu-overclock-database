@@ -1,0 +1,71 @@
+{
+  "gpu": "GeForce RTX 3050",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:27:17.807185Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.25,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 100,
+        "power_limit": 70
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+100",
+        "mem_offset": "+0",
+        "power_limit_percent": "35%"
+      },
+      "windows_miner_bat_args": "--cclock +100 --pl 70"
+    },
+    "RVN (Ravencoin)": {
+      "rating": 0.25,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 200,
+        "core_clock": 200,
+        "power_limit": 110
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+200",
+        "mem_offset": "+100",
+        "power_limit_percent": "55%"
+      },
+      "windows_miner_bat_args": "--cclock +200 --mclock +100 --pl 110"
+    },
+    "DNX (Dynex)": {
+      "rating": 0.25,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": -2000,
+        "core_clock": 100,
+        "power_limit": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+100",
+        "mem_offset": "-1000",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--cclock +100 --mclock -1000"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.25,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 200,
+        "core_clock": 200,
+        "power_limit": 110
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+200",
+        "mem_offset": "+100",
+        "power_limit_percent": "55%"
+      },
+      "windows_miner_bat_args": "--cclock +200 --mclock +100 --pl 110"
+    }
+  }
+}

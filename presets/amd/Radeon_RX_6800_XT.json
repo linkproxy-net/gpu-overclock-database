@@ -1,0 +1,68 @@
+{
+  "gpu": "Radeon RX 6800 XT",
+  "brand": "amd",
+  "tdp": 300,
+  "updated_at": "2026-11-12T07:28:28.599098Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.04545,
+      "miners_count": 9,
+      "hiveos_linux": {
+        "mem_clock": 1050,
+        "core_clock": 1300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1300 (需按Ctrl+F锁频)",
+        "mem_offset": "+1050",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1300 --mclock +1050"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.00505,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": ""
+    },
+    "NEXA (Nexa)": {
+      "rating": 0.0202,
+      "miners_count": 4,
+      "hiveos_linux": {
+        "mem_clock": 1055,
+        "core_clock": 1800,
+        "core_state": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1800 (需按Ctrl+F锁频)",
+        "mem_offset": "+1055",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1800 --mclock +1055"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.04545,
+      "miners_count": 9,
+      "hiveos_linux": {
+        "mem_clock": 1050,
+        "core_clock": 1300
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1300 (需按Ctrl+F锁频)",
+        "mem_offset": "+1050",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1300 --mclock +1050"
+    }
+  }
+}

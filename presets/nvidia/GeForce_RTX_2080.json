@@ -1,0 +1,54 @@
+{
+  "gpu": "GeForce RTX 2080",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:26:51.158136Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.03704,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 500,
+        "core_clock": 100,
+        "power_limit": 158
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+100",
+        "mem_offset": "+250",
+        "power_limit_percent": "79%"
+      },
+      "windows_miner_bat_args": "--cclock +100 --mclock +250 --pl 158"
+    },
+    "DNX (Dynex)": {
+      "rating": 0.03704,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "power_limit": 125
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "62%"
+      },
+      "windows_miner_bat_args": "--pl 125"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.03704,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 500,
+        "core_clock": 100,
+        "power_limit": 158
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+100",
+        "mem_offset": "+250",
+        "power_limit_percent": "79%"
+      },
+      "windows_miner_bat_args": "--cclock +100 --mclock +250 --pl 158"
+    }
+  }
+}

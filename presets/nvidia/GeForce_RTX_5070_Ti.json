@@ -1,0 +1,101 @@
+{
+  "gpu": "GeForce RTX 5070 Ti",
+  "brand": "nvidia",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:25:40.930875Z",
+  "presets": {
+    "ETC (Ethereum Classic)": {
+      "rating": 0.00307,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 0,
+        "core_clock": 350,
+        "power_limit": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+350",
+        "mem_offset": "+0",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--cclock +350"
+    },
+    "RVN (Ravencoin)": {
+      "rating": 0.0092,
+      "miners_count": 3,
+      "hiveos_linux": {
+        "mem_clock": 0,
+        "core_clock": 200,
+        "power_limit": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+200",
+        "mem_offset": "+0",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--cclock +200"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.00307,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "core_clock": 499,
+        "power_limit": 290
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+499",
+        "mem_offset": "+0",
+        "power_limit_percent": "145%"
+      },
+      "windows_miner_bat_args": "--cclock +499 --pl 290"
+    },
+    "DNX (Dynex)": {
+      "rating": 0.01227,
+      "miners_count": 4,
+      "hiveos_linux": {
+        "core_clock": 200,
+        "power_limit": 250
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+200",
+        "mem_offset": "+0",
+        "power_limit_percent": "125%"
+      },
+      "windows_miner_bat_args": "--cclock +200 --pl 250"
+    },
+    "CFX (Conflux)": {
+      "rating": 0.00613,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "core_clock": 499,
+        "power_limit": 280
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+499",
+        "mem_offset": "+0",
+        "power_limit_percent": "140%"
+      },
+      "windows_miner_bat_args": "--cclock +499 --pl 280"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.0092,
+      "miners_count": 3,
+      "hiveos_linux": {
+        "mem_clock": 0,
+        "core_clock": 200,
+        "power_limit": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+200",
+        "mem_offset": "+0",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--cclock +200"
+    }
+  }
+}

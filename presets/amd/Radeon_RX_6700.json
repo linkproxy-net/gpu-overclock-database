@@ -1,0 +1,53 @@
+{
+  "gpu": "Radeon RX 6700",
+  "brand": "amd",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:28:45.441787Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.01282,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 1010,
+        "core_clock": 1570
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1570 (需按Ctrl+F锁频)",
+        "mem_offset": "+1010",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1570 --mclock +1010"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.11538,
+      "miners_count": 9,
+      "hiveos_linux": {
+        "mem_clock": 1050,
+        "core_clock": 1600
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1600 (需按Ctrl+F锁频)",
+        "mem_offset": "+1050",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1600 --mclock +1050"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.01282,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 1010,
+        "core_clock": 1570
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1570 (需按Ctrl+F锁频)",
+        "mem_offset": "+1010",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1570 --mclock +1010"
+    }
+  }
+}

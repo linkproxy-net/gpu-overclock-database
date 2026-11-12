@@ -1,0 +1,55 @@
+{
+  "gpu": "Radeon RX 5500 XT",
+  "brand": "amd",
+  "tdp": 200,
+  "updated_at": "2026-11-12T07:28:52.516323Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.0625,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 790,
+        "core_clock": 0,
+        "core_state": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+790",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--mclock +790"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.0625,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 930,
+        "core_clock": 1400
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1400 (需按Ctrl+F锁频)",
+        "mem_offset": "+930",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1400 --mclock +930"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.0625,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 790,
+        "core_clock": 0,
+        "core_state": 0
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+790",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--mclock +790"
+    }
+  }
+}

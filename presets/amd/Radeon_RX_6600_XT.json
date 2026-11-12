@@ -1,0 +1,84 @@
+{
+  "gpu": "Radeon RX 6600 XT",
+  "brand": "amd",
+  "tdp": 160,
+  "updated_at": "2026-11-12T07:28:19.741196Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 0.07407,
+      "miners_count": 28,
+      "hiveos_linux": {
+        "mem_clock": 1050,
+        "core_clock": 1350
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1350 (需按Ctrl+F锁频)",
+        "mem_offset": "+1050",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1350 --mclock +1050"
+    },
+    "ERG (Ergo)": {
+      "rating": 0.00529,
+      "miners_count": 2,
+      "hiveos_linux": {
+        "mem_clock": 1075,
+        "core_clock": 1900
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1900 (需按Ctrl+F锁频)",
+        "mem_offset": "+1075",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1900 --mclock +1075"
+    },
+    "DNX (Dynex)": {
+      "rating": 0.00265,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 1055,
+        "core_clock": 1355,
+        "core_state": 5
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1355 (需按Ctrl+F锁频)",
+        "mem_offset": "+1055",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1355 --mclock +1055"
+    },
+    "NEXA (Nexa)": {
+      "rating": 0.01323,
+      "miners_count": 5,
+      "hiveos_linux": {
+        "mem_clock": 1030,
+        "core_clock": 1220
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1220 (需按Ctrl+F锁频)",
+        "mem_offset": "+1030",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1220 --mclock +1030"
+    },
+    "CLORE / NEOX": {
+      "rating": 0.07407,
+      "miners_count": 28,
+      "hiveos_linux": {
+        "mem_clock": 1050,
+        "core_clock": 1350
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "lock",
+        "core_value": "1350 (需按Ctrl+F锁频)",
+        "mem_offset": "+1050",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": "--lock-cclock 1350 --mclock +1050"
+    }
+  }
+}

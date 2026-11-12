@@ -1,0 +1,40 @@
+{
+  "gpu": "Radeon RX 7800 XT",
+  "brand": "amd",
+  "tdp": 263,
+  "updated_at": "2026-11-12T07:29:42.530010Z",
+  "presets": {
+    "RVN (Ravencoin)": {
+      "rating": 1,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 0,
+        "core_clock": 0,
+        "core_state": 3
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": ""
+    },
+    "CLORE / NEOX": {
+      "rating": 1,
+      "miners_count": 1,
+      "hiveos_linux": {
+        "mem_clock": 0,
+        "core_clock": 0,
+        "core_state": 3
+      },
+      "windows_msi_afterburner": {
+        "core_mode": "offset",
+        "core_value": "+0",
+        "mem_offset": "+0",
+        "power_limit_percent": "默认"
+      },
+      "windows_miner_bat_args": ""
+    }
+  }
+}
