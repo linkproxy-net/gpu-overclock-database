@@ -1,5 +1,7 @@
 # ⚡ GPU Mining Overclock Database (全网显卡跨平台超频静态数据库)
 
+> 🌐 **在线可视化速查面板 (Web UI)**：[https://linkproxy-net.github.io/gpu-overclock-database/](https://linkproxy-net.github.io/gpu-overclock-database/)
+>
 > 基于 HiveOS 官方全网矿机真实大数据驱动，全面收录主流 NVIDIA & AMD 显卡，并已全自动完成 **Linux (HiveOS) ➔ Windows (MSI Afterburner / 内核批处理参数)** 换算。
 > **收录显卡总数**: `89` 款 | **最后自动同步**: `2026-11-12 07:31:15 UTC`
 
